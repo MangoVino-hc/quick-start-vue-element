@@ -1,0 +1,70 @@
+@import '../../../assets/css/crisen/flex';
+@import '../../../assets/css/global';
+
+@Color: @COLOR;
+
+.container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow-x: hidden;
+  * {
+    box-sizing: border-box;
+  }
+  .part_container {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+    .part {
+      @tilHeight: 60px;
+      width: 100%;
+      height: 100%;
+      padding: @tilHeight 20px 20px;
+      position: relative;
+      .til {
+        width: 100%;
+        height: @tilHeight;
+        line-height: @tilHeight;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 20px;
+        font-size: @fontSize + 2px;
+        text-align: left;
+        .btn {
+          width: 100px;
+          height: 36px;
+          line-height: 36px;
+          position: absolute;
+          top: (@tilHeight - 36px) / 2;
+          right: 20px;
+          text-align: center;
+          color: @Color;
+          border: 1px solid @Color;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: @fontSize;
+          &:hover {
+            background-color: @Color;
+            color: #fff;
+          }
+          i {
+            font-weight: bold;
+          }
+        }
+      }
+      .cont {
+        width: 100%;
+        height: 100%;
+        padding-bottom: 10px;
+        position: relative;
+        .echarts_bx {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

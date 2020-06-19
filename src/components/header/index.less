@@ -1,0 +1,202 @@
+@import '../../assets/css/crisen/flex';
+@import '../../assets/css/global';
+
+@navWidth: 150px;
+@navFontSize: 16px;
+@headerHeight: 64px;
+@activeColor: @COLOR;
+@color: #696969;
+
+.obj_hearder {
+	width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+	height: @headerHeight;
+	//padding: 0 40px;
+	box-shadow: 0 0 20px rgba(85,85,85,.3);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 998;
+	min-width: 1200px;
+  background-color: #FFF;
+  color: @color;
+  font-size: @fontSize;
+  //background-image: url("../../assets/img/header/background.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  .header_lef,.header_mid,.header_rig {
+    float: left;
+    height: @headerHeight;
+    position: relative;
+  }
+  .header_lef,.header_rig {
+    width: 36%;
+  }
+  .header_mid {
+    width: 28%;
+  }
+  .header_cont {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .jus_logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 140px;
+    height: @headerHeight;
+    padding: 0 20px;
+    white-space: nowrap;
+    //color: @color / 2;
+    color: #333;
+    font-size: @fontSize + 6px;
+    //font-weight: bold;
+    .flex_center();
+  }
+	.nav {
+		float: left;
+    font-size: @navFontSize;
+		//padding: 0 10px;
+		height: @headerHeight * 0.8;
+		line-height: @headerHeight * 0.8;
+    transition: border-color .3s,background-color .3s,color .3s;
+		&.link {
+      width: @navWidth;
+      outline: none;
+      .flex_center();
+			img {
+				vertical-align: -1px;
+			}
+			.nav {
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+				&:hover {
+          color: @activeColor;
+				}
+			}
+			.router-link-active {
+				color: @activeColor;
+        border-bottom: 2px solid @activeColor;
+        &:hover {
+          color: @activeColor;
+        }
+			}
+		}
+		&.logo {
+      min-width: 140px;
+      width: auto !important;
+			padding: 0;
+			img {
+				display: block;
+			}
+		}
+		&.logout {
+			position: absolute;
+      cursor: pointer;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 18px;
+      height: auto;
+			white-space: nowrap;
+			font-size: @fontSize;
+      img {
+        display: block;
+      }
+			i {
+				cursor: pointer;
+				margin-left: 10px;
+			}
+			i img {
+				vertical-align: -4px;
+			}
+		}
+	}
+}
+
+.obj_hearder {
+  .el-menu {
+    background-color: transparent;
+    height: @headerHeight;
+    .flex_end_center();
+    .nav {
+      width: 100%;
+      text-align: center;
+      &.t_l {
+        text-align: left;
+      }
+      &.link {
+        width: @navWidth;
+        outline: none;
+        .flex_center();
+        img {
+          vertical-align: -1px;
+        }
+        .nav {
+          border-bottom: 2px solid transparent;
+          cursor: pointer;
+          &:hover {
+            color: @activeColor;
+          }
+        }
+        .router-link-active {
+          color: @activeColor;
+          border-bottom: 2px solid @activeColor;
+          &:hover {
+            color: @activeColor;
+          }
+        }
+      }
+    }
+  }
+  .el-menu-item {
+  font-size: @navFontSize;
+  }
+  .el-menu--horizontal>.el-menu-item {
+    height: @headerHeight * 0.8;
+    line-height: @headerHeight * 0.8;
+    color: @color;
+    &:hover {
+      color: @activeColor !important;
+    }
+  }
+  .el-menu--horizontal > .el-submenu .el-submenu__title {
+    height: @headerHeight;
+    line-height: @headerHeight;
+    color: @color;
+  }
+  .el-menu.el-menu--horizontal {
+    border-bottom: none;
+  }
+  .el-menu--horizontal > li {
+    width: @navWidth;
+  }
+  .el-menu--horizontal>.el-submenu:focus .el-submenu__title {
+    color: @color;
+  }
+  .el-menu--horizontal>.el-submenu:hover .el-submenu__title {
+    color: @color;
+  }
+  .el-menu--horizontal>.el-submenu.is-active .el-submenu__title {
+    color: @activeColor !important;
+    &:hover {
+      color: @activeColor !important;
+    }
+  }
+  .el-menu--horizontal .el-menu-item:not(.is-disabled):focus, .el-menu--horizontal .el-menu-item:not(.is-disabled) {
+    color: @color !important;
+  }
+  .el-menu--horizontal>.el-menu-item:not(.is-disabled):focus, .el-menu--horizontal>.el-menu-item:not(.is-disabled):hover, .el-menu--horizontal>.el-submenu .el-submenu__title:hover {
+    color: @activeColor !important;
+    background-color: transparent !important;
+    &.is-active {
+      color: @activeColor !important;
+    }
+  }
+  .el-menu--horizontal>.el-menu-item.is-active {
+    color: @activeColor !important;
+    border-bottom: 2px solid @activeColor;
+  }
+
+}

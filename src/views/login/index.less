@@ -1,0 +1,176 @@
+@import '../../assets/css/crisen/flex';
+@import '../../assets/css/global';
+
+.login_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 678px;
+  min-width: 1200px;
+  .flex_center();
+  //background-image: url("../../assets/img/login/background.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-color: #fff;
+  //background: #699bc8; /* Old browsers */
+  //background-image: linear-gradient(0deg,  rgba(180, 196, 214, 1) 0%, rgba(180, 196, 214, 0) 0%);
+
+  background-image: radial-gradient(ellipse at center,  rgba(180, 196, 214, 0.5) 0%,rgba(180, 196, 214, 0.3) 100%);
+
+  .tl {
+    top: 20px;
+    left: 20px;
+    //background-image: url("../../assets/img/login/tl.png");
+  }
+  .tr {
+    top: 20px;
+    right: 20px;
+    //background-image: url("../../assets/img/login/tr.png");
+  }
+  .bl {
+    bottom: 20px;
+    left: 20px;
+    //background-image: url("../../assets/img/login/bl.png");
+  }
+  .br {
+    bottom: 20px;
+    right: 20px;
+    //background-image: url("../../assets/img/login/br.png");
+  }
+  .tl,.tr,.bl,.br {
+    width: 78px;
+    height: 78px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    position: absolute;
+    opacity: .8;
+  }
+  .mid_cont {
+    background-color: #fff;
+    box-shadow: 0 0 20px #d2d2d2;
+    border-radius: 10px;
+    overflow: hidden;
+    .login_bx {
+      padding: 20px;
+      padding-bottom: 40px;
+    }
+    .title {
+      color: #282828;
+      .txt {
+        font-size: @fontSize + 8px;
+      }
+      .info_en {
+        font-size: @fontSize - 2px;
+      }
+    }
+    .inp_cont {
+      overflow: hidden;
+      position: relative;
+      .bg {
+        pointer-events: none;
+      }
+      .inner_cont {
+        .inner {
+          width: 260px;
+          margin: 20px auto 0;
+          .inp_itl {
+            .flex();
+            .nav {
+              width: 50%;
+              font-size: @fontSize + 8px;
+              line-height: 42px;
+              cursor: pointer;
+              color: rgba(255,255,255,.5);
+              position: relative;
+              box-sizing: border-box;
+              &.on {
+                color: #26d1dd;
+                border-bottom: 2px solid #26d1dd;
+                &:hover {
+                  color: #26d1dd;
+                }
+              }
+              &:hover {
+                color: rgba(255,255,255,.55);
+              }
+              &:first-child {
+                &:after {
+                  content: '';
+                  width: 1px;
+                  height: 18px;
+                  position: absolute;
+                  top: 50%;
+                  right: 0;
+                  transform: translateY(-50%);
+                  background-color: #fff;
+                  opacity: .8;
+                }
+              }
+            }
+          }
+          .inpus {
+            width: 100%;
+            .eit {
+              position: relative;
+              .ico {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+              }
+            }
+            input {
+              color: #282828;
+              width: 100%;
+              height: 40px;
+              display: block;
+              background-color: transparent;
+              border: none;
+              border-bottom: 1px solid #dcdcdc;
+              margin-top: 36px;
+              outline: none;
+              padding-left: 46px;
+            }
+            .auth_code {
+              position: relative;
+              .get_cord {
+                color: rgba(255,255,255,.8);
+                width: 80px;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: @fontSize - 2px;
+                cursor: pointer;
+                .flex_center();
+              }
+            }
+          }
+          .login_btn {
+            width: 100%;
+            height: 44px;
+            border-radius: 2px;
+            border: 1px solid @COLOR;
+            .flex_center();
+            color: #fff;
+            margin-top: 30px;
+            cursor: pointer;
+            padding: 2px;
+            .in_bx {
+              width: 100%;
+              height: 100%;
+              line-height: 1;
+              border-radius: 1px;
+              .flex_center();
+              background-color: @COLOR;
+            }
+          }
+        }
+      }
+    }
+  }
+}
